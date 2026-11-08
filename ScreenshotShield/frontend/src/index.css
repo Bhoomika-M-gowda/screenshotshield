@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0; color: #e2e8f0; background: #03050f;
+  background-image:
+    radial-gradient(900px 500px at 12% -8%, rgba(59,130,246,.22), transparent 60%),
+    radial-gradient(800px 500px at 100% 8%, rgba(139,92,246,.20), transparent 60%),
+    linear-gradient(rgba(148,163,184,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,.035) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+  background-attachment: fixed;
+}
+@layer components {
+  .glass { @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_40px_rgba(2,6,23,.55)]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-gradient-to-r from-electric to-violet text-white shadow-[0_0_28px_rgba(99,102,241,.45)] hover:shadow-[0_0_40px_rgba(139,92,246,.7)] hover:-translate-y-0.5; }
+  .btn-ghost { @apply btn border border-white/15 bg-white/5 text-slate-200 hover:bg-white/10; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium; }
+  .h-grad { @apply bg-gradient-to-r from-sky-300 via-electric to-violet bg-clip-text text-transparent; }
+}
+.reveal { animation: fadeUp .6s ease both; }
+::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
